@@ -13,7 +13,7 @@ setup = function(){
 		context1.drawImage(img, 0, 0);
 	}
 	
-	img.src = 'dawg.gif';
+	img.src = 'res/dawg.gif';
 	
 }
 
