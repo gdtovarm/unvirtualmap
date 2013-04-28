@@ -1,0 +1,23 @@
+1. Splash o Pantalla de presentacion cuando se ingresa a la pagina, que diga
+   UN VIRTUAL MAP Alpha / Not licensed by UN xD. Opcional: Tener un sonido
+   cuando se muestra.
+
+2. Tener un mapa en la pagina que se pueda arrastrar o se pueda hacer click en
+   las flechas en la parte de arriba, los lados, y abajo. Opcional: Mostrar
+   flechitas en los extremos donde se puede hacer click.
+
+3. Tener puntos clave en el mapa que se puedan que se puedan clickear para
+   ingresar a las fotos panoramicas. Estos puntos muestran tool-tips cuando el
+   mouse esta encima.
+
+4. Cada panoramica tiene su propia pantalla en la pagina. Esto se puede lograr o
+   bien cambiando escenarios con javascrpit, o haciendo un html para cada
+   panoramica. La panoramica debe poder moverse solamente hacia los lados o bien
+   haciendo arrastre de la foto o haciendo clck en los extremos.
+
+5. En cada pantalla de la foto panoramica se muestra el nombre del edificio e
+   informacion pertinente acerca del mismo. 
+
+6. Opcional: Implementar la barra de busqueda que devuelva la lista de los
+   puntos clave relacionados con la palabra que se busco. Al hacer click en un
+   elemnto de la lista, el mapa se movera hacia dicho punto y lo marcara.

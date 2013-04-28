@@ -3,8 +3,8 @@ setup = function(){
 	var c = document.getElementById("cvs");
 	var context1 = c.getContext("2d");
 
-	c.width = window.innerWidth;
-	c.height = window.innerHeight;
+	c.width = 400; //window.innerWidth;
+	c.height = 400; //window.innerHeight;
 
 	var img = new Image();
 	
