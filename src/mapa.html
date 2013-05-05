@@ -1,29 +1,78 @@
 <!DOCTYPE HTML>
 <html>
+<title> Map </title>
 <head>
-<meta charset="utf-8">
-<meta name="keywords" content="Universidad Nacional, Mapas, página, paseo">
-<title>MAPA</title>
-<style type="text/css">
-body {
-	background-color: #FFFFFF;
-}
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-	text-align: center;
+    <style>
 
-#apDiv1 {
-	position: relative;
-	width: 400px;
-	height: 504px;
-	z-index: 1;
-}
-</style>
+        body
+        {
+            margin:0px;
+            padding:0px;
+        }
+		#container
+		{
+			position:fixed;
+			overflow-y: hidden;
+			width:100%
+		}
+
+    </style>
+    <script src="kntc.js"></script>
 </head>
 <body>
-<div id="apDiv1">
-  <p>MAPA UN</p>
-  <p><img src="Imagenes/map.jpg" width="994" height="912"></p>
-</div>
+
+    <div id="container"></div>
+    <script defer="defer">
+
+    function drawImage(imageObj) {
+        var stage = new Kinetic.Stage({
+          container: "container",
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+        var layer = new Kinetic.Layer();
+
+        var mapImg = new Kinetic.Image({
+          image: imageObj,
+          x: -500,
+          y: -1050,
+          width: 2011,
+          height: 1921,
+          draggable: true,
+
+          dragBoundFunc: function(pos) {
+				var newX = pos.x;
+				var newY = pos.y;
+				
+				if(newX > 0) {newX = 0;}
+				if(newX <= -645) {newX = -645;}
+				
+				if(newY > 0) {newY = 0;}
+				if(newY <= -1274) {newY = -1274;}
+				
+				return{
+					x: newX,
+					y: newY
+				};
+            }
+        });
+
+        // add cursor styling
+        mapImg.on('mouseover', function() {
+          document.body.style.cursor = 'pointer';
+        });
+        mapImg.on('mouseout', function() {
+          document.body.style.cursor = 'default';
+        });
+
+        layer.add(mapImg);
+        stage.add(layer);
+    }
+    var imageObj = new Image();
+    imageObj.onload = function() {
+        drawImage(this);
+    };
+    imageObj.src ="map.png";
+    </script>
 </body>
 </html>
