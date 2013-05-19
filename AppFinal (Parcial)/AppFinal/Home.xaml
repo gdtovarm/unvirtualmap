@@ -1,0 +1,64 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AppFinal.Home"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="PortraitOrLandscape"  
+    shell:SystemTray.IsVisible="True" xmlns:my="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI">
+
+    <!--LayoutRoot es la cuadrícula raíz donde se coloca todo el contenido de la página-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <!--Control Pivot-->
+        <controls:Pivot Title="UnVirtualMap" Margin="-6,-3,6,3">
+            <!--Elemento Pivot uno-->
+            <controls:PivotItem Header="Mapa">
+                <Grid>
+                    <ScrollViewer Height="601" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" HorizontalAlignment="Left" Name="SV1" VerticalAlignment="Top" Width="468">
+                        <Image Height="1036" Name="Image1" Stretch="Uniform" Width="1035" Source="/AppFinal;component/Images/map_bog1.png" />
+                    </ScrollViewer>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Elemento Pivot dos-->
+            <controls:PivotItem Header="Lista de Edificios">
+                <Grid Height="636">
+                    <Button Content="Entrar" Height="73" HorizontalAlignment="Left" Margin="247,59,0,0" Name="Go_Per" VerticalAlignment="Top" Width="132" Click="Go_Per_Click" />
+                    <Image Height="140" HorizontalAlignment="Left" Margin="45,58,0,0" Name="image2" Stretch="UniformToFill" VerticalAlignment="Top" Width="164" Source="/AppFinal;component/360I/1.jpg"/>
+                    <TextBlock Height="45" HorizontalAlignment="Left" Margin="44,18,0,0" Name="textBlock1" Text="La Perola" VerticalAlignment="Top" Width="341" />
+
+                    <Button Content="Entrar" Height="72" HorizontalAlignment="Left" Margin="250,263,0,0" Name="Go_Der" VerticalAlignment="Top" Width="126" Click="Go_Der_Click" />
+                    <Image Height="140" HorizontalAlignment="Left" Margin="43,252,0,0" Name="image3" Stretch="UniformToFill" VerticalAlignment="Top" Width="164" Source="/AppFinal;component/360I/2.jpg"/>
+                    <TextBlock Height="45" HorizontalAlignment="Left" Margin="41,208,0,0" Name="textBlock2" Text="Facultad de Derecho" VerticalAlignment="Top" Width="341" />
+
+                    <Button Content="Entrar" Height="72" HorizontalAlignment="Left" Margin="250,449,0,0" Name="Go_Agro" VerticalAlignment="Top" Width="132" Click="Go_Agro_Click" />
+                    <Image Height="140" HorizontalAlignment="Left" Margin="43,445,0,0" Name="image4" Stretch="UniformToFill" VerticalAlignment="Top" Width="164" Source="/AppFinal;component/360I/3.jpg"/>
+                    <TextBlock Height="45" HorizontalAlignment="Left" Margin="34,405,0,0" Name="textBlock3" Text="Facultad de Agronomia" VerticalAlignment="Top" Width="341" />
+                    
+                    
+                        
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+    </Grid>
+
+    <!--Código de ejemplo que muestra el uso de ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Botón 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Botón 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="Elemento de menú 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="Elemento de menú 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
