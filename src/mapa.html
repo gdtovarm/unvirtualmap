@@ -9,7 +9,7 @@
             margin:0px;
             padding:0px;
         }
-		#container
+		#content
 		{
 			position:fixed;
 			overflow-y: hidden;
@@ -17,62 +17,11 @@
 		}
 
     </style>
-    <script src="kntc.js"></script>
+    <script src="Scripts/kntc.js"></script>
 </head>
 <body>
-
-    <div id="container"></div>
-    <script defer="defer">
-
-    function drawImage(imageObj) {
-        var stage = new Kinetic.Stage({
-          container: "container",
-          width: window.innerWidth,
-          height: window.innerHeight,
-        });
-        var layer = new Kinetic.Layer();
-
-        var mapImg = new Kinetic.Image({
-          image: imageObj,
-          x: -500,
-          y: -1050,
-          width: 2011,
-          height: 1921,
-          draggable: true,
-
-          dragBoundFunc: function(pos) {
-				var newX = pos.x;
-				var newY = pos.y;
-				
-				if(newX > 0) {newX = 0;}
-				if(newX <= -645) {newX = -645;}
-				
-				if(newY > 0) {newY = 0;}
-				if(newY <= -1274) {newY = -1274;}
-				
-				return{
-					x: newX,
-					y: newY
-				};
-            }
-        });
-
-        // add cursor styling
-        mapImg.on('mouseover', function() {
-          document.body.style.cursor = 'pointer';
-        });
-        mapImg.on('mouseout', function() {
-          document.body.style.cursor = 'default';
-        });
-
-        layer.add(mapImg);
-        stage.add(layer);
-    }
-    var imageObj = new Image();
-    imageObj.onload = function() {
-        drawImage(this);
-    };
-    imageObj.src ="map.png";
+<div id="content"></div>
+    <script defer="defer" src="Scripts/mapa.js">
     </script>
 </body>
 </html>
