@@ -12,8 +12,13 @@
 		{
                 margin: 0;
                 padding: 0;
-                height: 100%;
                 overflow-y: auto;
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
         }
 
         #content {
@@ -21,13 +26,20 @@
 				position:fixed;
 				overflow-y:hidden;
         }
+		
+		#zoomPane {
+				position: fixed;
+				top: 83 px;
+				margin: 0;
+				padding: 1px;
+		}
 
         #header {
                 top: 0px;
                 left: 0px;
                 width: 100%;
                 height: 62px;
-                position: fixed;
+                position: absolute;
                 background-color: #CEFDC6;
                 border: 1px solid #888;
         }
@@ -96,10 +108,11 @@
 	</div>
 	
 </div>
+
+<div id="zoomPane"></div>
 <div id="content"></div>
+
     <script defer="defer">
-	
-	
 	
 	var keyPoint = new Image();
 	var mapLayer = new Kinetic.Layer();
@@ -128,11 +141,6 @@
 				y: newY
 			};
         }
-    });
-	
-	stage.on('click', function() {
-		var mousePos = stage.getMousePosition();
-		console.log(mousePos.x + " " + mousePos.y);
     });
 	
 	var map = new Image();
@@ -205,8 +213,50 @@
 	stage.add(pointsLayer);
 	
 	
-    map.src ="map.png";
+	var zoomPls = new Image();
+	var zoomMns = new Image();
+	var zoomLyr = new Kinetic.Layer();
+	
+	var zoomStg = new Kinetic.Stage({
+		container: "zoomPane",
+		x: 0,
+		y: 0,
+		width: 100,
+		height: 50,
+	});
+	
+	zoomPls.onload = function(){
+		var plsBtn = new Kinetic.Image({
+			image: zoomPls,
+			x: 0,
+			y: 0,
+			widht: 48,
+			height: 48
+		});
+		
+		zoomLyr.add(plsBtn);
+		zoomLyr.draw();
+	};
+	
+	zoomMns.onload = function(){
+		var mnsBtn = new Kinetic.Image({
+			image: zoomMns,
+			x: 49,
+			y: 0,
+			widht: 48,
+			height: 48
+		});
+		zoomLyr.add(mnsBtn);
+		zoomLyr.draw();
+	};
+	
+	zoomStg.add(zoomLyr);
+	zoomLyr.draw();
+	
+    map.src =" map.png";
 	keyPoint.src = "res/dot.png";
+	zoomPls = "res/plusbtn.png";
+	zoomMns = "res/minusbtn.png";
 	
     </script>
 </body>
