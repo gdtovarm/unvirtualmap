@@ -1,6 +1,34 @@
+var complexText = new Kinetic.Text({
+	x: 0,
+	y: 0,
+	text: '',
+	fontSize: 18,
+	fontFamily: 'Calibri',
+	fill: '#555',
+	padding: 20,
+	align: 'center',
+	visible: 'false'
+});
+
+var rect = new Kinetic.Rect({
+	x: 0,
+	y: 0,
+	stroke: '#555',
+	strokeWidth: 5,
+	fill: '#ddd',
+	shadowColor: 'black',
+	shadowBlur: 10,
+	shadowOffset: [10, 10],
+	shadowOpacity: 0.2,
+	cornerRadius: 10,
+	visible: 'false'
+});
+
 var keyPoint = new Image();
+
 	var mapLayer = new Kinetic.Layer();
 	var pointsLayer = new Kinetic.Layer();
+	var tooltipLayer = new Kinetic.Layer();
 	
 	var stage = new Kinetic.Stage({
         container: "content",
@@ -261,105 +289,262 @@ var keyPoint = new Image();
 		perola.on('click touchstart', function() {
 			window.location.href = "Panoramicas/La_perola.html";
 		});
+		perola.on('mouseenter', function(){
+			showTooltip(perola,"Perola");
+		});
+		perola.on('mouseleave', function(){
+			hideTooltip();
+		});
+		
 		
 		derecho.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Derecho.html";
+		});
+		derecho.on('mouseenter', function(){
+			showTooltip(derecho,"Derecho");
+		});
+		derecho.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		veterinaria.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Veterinaria.html";
 		});
+		veterinaria.on('mouseenter', function(){
+			showTooltip(veterinaria,"Veterinaria");
+		});
+		veterinaria.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		musica.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Musica.html";
+		});
+		musica.on('mouseenter', function(){
+			showTooltip(musica,"Musica");
+		});
+		musica.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		artes.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Artes.html";
 		});
+		artes.on('mouseenter', function(){
+			showTooltip(artes,"Artes");
+		});
+		artes.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		sindu.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Sindu.html";
+		});
+		sindu.on('mouseenter', function(){
+			showTooltip(sindu,"Sindu");
+		});
+		sindu.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		capilla.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Capilla.html";
 		});
+		capilla.on('mouseenter', function(){
+			showTooltip(capilla,"Capilla");
+		});
+		capilla.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		labIngeominas.on('click touchstart', function() {
 			window.location.href = "Panoramicas/LabIngeominas.html";
+		});
+		labIngeominas.on('mouseenter', function(){
+			showTooltip(labIngeominas,"Laboratorio Ingeominas");
+		});
+		labIngeominas.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		patios.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Patios.html";
 		});
+		patios.on('mouseenter', function(){
+			showTooltip(patios,"Patios");
+		});
+		patios.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		astronomia.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Astronomia.html";
+		});
+		astronomia.on('mouseenter', function(){
+			showTooltip(astronomia,"Astronomia");
+		});
+		astronomia.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		paso26.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Paso26.html";
 		});
+		paso26.on('mouseenter', function(){
+			showTooltip(paso26,"Pasillo Calle 26");
+		});
+		paso26.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		paso45.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Paso45.html";
+		});
+		paso45.on('mouseenter', function(){
+			showTooltip(paso45,"Entrada 45");
+		});
+		paso45.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		aulas.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Aulas.html";
 		});
+		aulas.on('mouseenter', function(){
+			showTooltip(aulas,"Aulas de Ingenieria");
+		});
+		aulas.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		salmona.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Salmona.html";
+		});
+		salmona.on('mouseenter', function(){
+			showTooltip(salmona,"Postgrados de Ciencias Humanas");
+		});
+		salmona.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		cytAtras.on('click touchstart', function() {
 			window.location.href = "Panoramicas/CytAtras.html";
 		});
+		cytAtras.on('mouseenter', function(){
+			showTooltip(cytAtras,"Parque de los Maestros Abstractos");
+		});
+		cytAtras.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		cytPlaza.on('click touchstart', function() {
 			window.location.href = "Panoramicas/CytPlaza.html";
+		});
+		cytPlaza.on('mouseenter', function(){
+			showTooltip(cytPlaza,"Plaza Edificio Ciencia y Tecnologia");
+		});
+		cytPlaza.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		ciencias.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Ciencias.html";
 		});
+		ciencias.on('mouseenter', function(){
+			showTooltip(ciencias,"Facultad de Ciencias");
+		});
+		ciencias.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		zootecnia.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Zootecnia.html";
+		});
+		zootecnia.on('mouseenter', function(){
+			showTooltip(zootecnia,"Zootecnia");
+		});
+		zootecnia.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		plazaVet.on('click touchstart', function() {
 			window.location.href = "Panoramicas/PlazaVet.html";
 		});
+		plazaVet.on('mouseenter', function(){
+			showTooltip(plazaVet,"Plaza Veterinaria y Zootecnia");
+		});
+		plazaVet.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		iei.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Iei.html";
+		});
+		iei.on('mouseenter', function(){
+			showTooltip(iei,"Instituto de Extension e Investigacion");
+		});
+		iei.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		plazaChe.on('click touchstart', function() {
 			window.location.href = "Panoramicas/PlazaChe.html";
 		});
+		plazaChe.on('mouseenter', function(){
+			showTooltip(plazaChe,"Plaza Che");
+		});
+		plazaChe.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		ingenieria.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Ingenieria.html";
+		});
+		ingenieria.on('mouseenter', function(){
+			showTooltip(ingenieria,"Edificio viejo de Ingenieria");
+		});
+		ingenieria.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		cadeIng.on('click touchstart', function() {
 			window.location.href = "Panoramicas/CadeIng.html";
 		});
+		cadeIng.on('mouseenter', function(){
+			showTooltip(cadeIng,"Edificio viejo de Ingenieria");
+		});
+		cadeIng.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		medicina.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Medicina.html";
+		});
+		medicina.on('mouseenter', function(){
+			showTooltip(medicina,"Medicina");
+		});
+		medicina.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		economia.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Economia.html";
 		});
+		economia.on('mouseenter', function(){
+			showTooltip(economia,"Facultad de Economía");
+		});
+		economia.on('mouseleave', function(){
+			hideTooltip();
+		});
 		
 		salida26.on('click touchstart', function() {
 			window.location.href = "Panoramicas/Salida26.html";
+		});
+		salida26.on('mouseenter', function(){
+			showTooltip(salida26,"Entrada de la Calle 26");
+		});
+		salida26.on('mouseleave', function(){
+			hideTooltip();
 		});
 		
 		pointsLayer.add(perola);
@@ -392,9 +577,33 @@ var keyPoint = new Image();
 		pointsLayer.draw();
 	};
 	
+	tooltipLayer.add(rect).add(complexText);
+	
+	tooltipLayer.draw();
+	
     stage.add(mapLayer);
 	stage.add(pointsLayer);
-	
+	stage.add(tooltipLayer);
 	
     map.src ="Imagenes/map.jpg";
 	keyPoint.src = "res/dot.png";
+	
+function showTooltip(point,string){
+	complexText.setText(string);
+	var x = point.getX()-(complexText.getWidth()/2)+9;
+	var y = point.getY()-60;
+	complexText.setPosition(x,y);
+	rect.setPosition(x,y);
+	rect.setHeight(complexText.getHeight());
+	rect.setWidth(complexText.getWidth());
+	complexText.setVisible(true);
+	rect.setVisible(true);
+	
+	tooltipLayer.draw();
+}
+
+function hideTooltip(){
+	complexText.setVisible(false);
+	rect.setVisible(false);
+	tooltipLayer.draw();
+}
