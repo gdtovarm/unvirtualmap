@@ -28,8 +28,7 @@ if (timerId) {
 window.clearTimeout(timerId);}}
 function scroll() {
 backgroundPosX-=deltaX;
-backgroundPosY=Math.max(-150,Math.min(-
-20,backgroundPosY-deltaY));
+backgroundPosY=Math.max(-150,Math.min(-20,backgroundPosY-deltaY));
 panoramajavascriptDiv.style.backgroundPosition=Math.floor
 (backgroundPosX)+"px "+Math.floor(backgroundPosY)+"px";
 timerId=window.setTimeout('scroll()',timeout);}
