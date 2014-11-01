@@ -9,8 +9,8 @@ About:
 	Nacional de Colombia - Sede Bogotá, fecha limite de entrega sera para Junio 15 de 2013.
 	
 Integrantes:
-	German David Tovar Marin
-	Oswaldo Jesus Mantilla Mezquida
-	Brayan Alexander Navarrete Molina
-	Santiago Hernandez Hernandez
-	Jose Luis ... ni idea
+<br>	German David Tovar Marin
+<br>	Oswaldo Jesus Mantilla Mezquida
+<br>	Brayan Alexander Navarrete Molina
+<br>	Santiago Hernandez Hernandez
+<br>	Jose Luis ... ni idea
